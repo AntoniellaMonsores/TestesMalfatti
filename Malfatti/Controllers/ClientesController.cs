@@ -7,7 +7,7 @@ using Malfatti.Models;
 
 namespace Malfatti.Controllers
 {
-    public class ClienteController : Controller
+    public class ClientesController : Controller
     {
         private static IList<Cliente> clientes = new List<Cliente>()
         {

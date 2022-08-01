@@ -10,22 +10,13 @@ using Malfatti.Models;
 
 namespace Malfatti.Controllers
 {
-    public class CategoriasController : Controller
+    public class MarcasController : Controller
     {
         private EFContext context = new EFContext();
 
-        /*private static IList<Categoria> categorias = new List<Categoria>()
-        {
-            new Categoria() { CategoriaId = 1, Nome = "Anéis"},
-            new Categoria() { CategoriaId = 2, Nome = "Braceletes"},
-            new Categoria() { CategoriaId = 3, Nome = "Brincos"},
-            new Categoria() { CategoriaId = 4, Nome = "Colares"},
-            new Categoria() { CategoriaId = 5, Nome = "Relógios"}
-        };*/
-
         public ActionResult Index()
         {
-            return View(context.Categorias.OrderBy(c => c.Nome));
+            return View(context.Marcas.OrderBy(c => c.Nome));
 
         }
 
@@ -36,13 +27,13 @@ namespace Malfatti.Controllers
             return View();
         }
 
-      
+
         // POST: Create
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Create(Categoria categoria)
+        public ActionResult Create(Marca marca)
         {
-            context.Categorias.Add(categoria);
+            context.Marcas.Add(marca);
             context.SaveChanges();
             return RedirectToAction("Index");
         }

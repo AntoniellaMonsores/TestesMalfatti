@@ -1,9 +1,9 @@
-﻿using Malfatti.Models;
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.Data.Entity;
 using System.Linq;
 using System.Web;
+using Malfatti.Models;
 
 namespace Malfatti.Context
 {
@@ -11,6 +11,6 @@ namespace Malfatti.Context
     {
         public EFContext() : base("Asp_Net_MVC_CS") { }
         public DbSet<Categoria> Categorias { get; set; }
-        public DbSet<Cliente> Clientes { get; set; }
+        public DbSet<Marca> Marcas { get; set; }
     }
 }

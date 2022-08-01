@@ -5,7 +5,7 @@ using System.Web;
 
 namespace Malfatti.Models
 {
-    public class Categoria
+    public class Marca
     {
         public int Id { get; set; }
         public string Nome { get; set; }
