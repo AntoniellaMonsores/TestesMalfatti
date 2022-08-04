@@ -121,6 +121,7 @@
     <Content Include="Views\Categorias\Index.cshtml" />
     <Content Include="Views\Cliente\Index.cshtml" />
     <Content Include="Views\Categorias\Create.cshtml" />
+    <Content Include="Views\Produtos\Index.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
@@ -131,7 +132,6 @@
   <ItemGroup>
     <Folder Include="App_Data\" />
     <Folder Include="Views\Marcas\" />
-    <Folder Include="Views\Produtos\" />
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>

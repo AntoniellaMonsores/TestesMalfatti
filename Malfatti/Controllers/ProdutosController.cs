@@ -3,15 +3,19 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 using System.Web.Mvc;
+using Malfatti.Context;
 
 namespace Malfatti.Controllers
 {
     public class ProdutosController : Controller
     {
-        // GET: Produtos
+        private EFContext context = new EFContext();
+
+        // GET : Produtos
         public ActionResult Index()
         {
-            return View();
+            return View(context.Produtos.OrderBy(c => c.Nome));
+
         }
     }
 }
