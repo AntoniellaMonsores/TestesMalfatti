@@ -9,7 +9,7 @@ namespace Malfatti.Models
     {
         public int Id { get; set; }
         public int CategoriaId { get; set; }
-        public int MarcaId { get; set; }
+        public int FabricanteId { get; set; }
         public string Nome { get; set; }
         public string Descricao { get; set; }
         public double Preco { get; set; }

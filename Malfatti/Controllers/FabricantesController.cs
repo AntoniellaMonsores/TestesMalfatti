@@ -10,13 +10,13 @@ using Malfatti.Models;
 
 namespace Malfatti.Controllers
 {
-    public class MarcasController : Controller
+    public class FabricantesController : Controller
     {
         private EFContext context = new EFContext();
 
         public ActionResult Index()
         {
-            return View(context.Marcas.OrderBy(c => c.Nome));
+            return View(context.Fabricantes.OrderBy(c => c.Nome));
 
         }
 
@@ -31,9 +31,9 @@ namespace Malfatti.Controllers
         // POST: Create
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Create(Marca marca)
+        public ActionResult Create(Fabricante fabricante)
         {
-            context.Marcas.Add(marca);
+            context.Fabricantes.Add(fabricante);
             context.SaveChanges();
             return RedirectToAction("Index");
         }
