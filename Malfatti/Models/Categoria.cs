@@ -7,7 +7,7 @@ namespace Malfatti.Models
 {
     public class Categoria
     {
-        public int Id { get; set; }
+        public int CategoriaId { get; set; }
         public string Nome { get; set; }
     }
 }
