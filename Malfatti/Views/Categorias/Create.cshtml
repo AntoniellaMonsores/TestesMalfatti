@@ -4,6 +4,7 @@
     Layout = "~/Views/Shared/_Layout1.cshtml";
     ViewBag.Title = "Registrando um NOVO FABRICANTE";
 }
+
 @using (Html.BeginForm())
 {
     @Html.AntiForgeryToken()
@@ -34,6 +35,7 @@
         </div>
     </div>
 }
+
 @section ScriptPage {
     <script src="~/Scripts/jquery.validate.min.js">
     </script>

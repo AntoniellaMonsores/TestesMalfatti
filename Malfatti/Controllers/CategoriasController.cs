@@ -27,7 +27,6 @@ namespace Malfatti.Controllers
             return View();
         }
 
-      
         // POST: Create
         [HttpPost]
         [ValidateAntiForgeryToken]
@@ -37,7 +36,8 @@ namespace Malfatti.Controllers
             context.SaveChanges();
             return RedirectToAction("Index");
         }
-        // GET: Categorias/Delete/5
+
+        // GET: Delete
         public ActionResult Delete(long? id)
         {
             if (id == null)
@@ -45,7 +45,6 @@ namespace Malfatti.Controllers
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
             Categoria categoria = context.Categorias.Find(id);
-            //Fabricante fabricante = fabricantes.Where(m => m.FabricanteId == id).First();
             if (categoria == null)
             {
                 return HttpNotFound();
@@ -53,16 +52,15 @@ namespace Malfatti.Controllers
             return View(categoria);
         }
 
-        // POST: Categorias/Delete/5
+        // POST: Delete
         [HttpPost]
         [ValidateAntiForgeryToken]
         public ActionResult Delete(long id)
         {
             Categoria categoria = context.Categorias.Find(id);
-            //Categoria categoria = categorias.Where(m => m.CategoriaId == id).First();
             context.Categorias.Remove(categoria);
-            //Categorias.Remove(categoria);
             context.SaveChanges();
+            TempData["Message"] = "Categoria " + categoria.Nome.ToUpper() + " removida";
             return RedirectToAction("Index");
         }
     }
