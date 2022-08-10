@@ -1,0 +1,40 @@
+﻿* {
+    font-family: 'Abel', sans-serif;
+    text-align: center;
+    margin: 0;
+    padding: 0;
+    background-color: #F6F6F6;
+}
+
+h1{
+    font-weight: bold;
+    margin-bottom: 0.1225em;
+}
+
+input {
+    background: #FFFFFF;
+    padding: 2em 20em;
+    margin-left: 23.3em;
+    margin-bottom: 2em;
+    margin-top: 2em;
+}
+
+.botaosubmit {
+    background: rgba(158, 137, 94, 1);
+    color: white;
+    font-weight: bold;
+    padding-top: 2em;
+    padding-left: 17em;
+    padding-right: 17em;
+    margin-top: 4em;
+    font-size: 1em;
+    border-radius: 0px;
+    border: 0;
+    margin-left: 20em;
+}
+
+img {
+    width: 770px;
+    height: 100px;
+    margin-bottom: 1em;
+}
