@@ -13,5 +13,6 @@ namespace Malfatti.Context
         public DbSet<Categoria> Categorias { get; set; }
         public DbSet<Fabricante> Fabricantes { get; set; }
         public DbSet<Produto> Produtos { get; set; }
+        public DbSet<Usuario> Usuario { get; set; }
     }
 }
