@@ -1,0 +1,65 @@
+@model Malfatti.Models.Categoria
+
+@{
+    Layout = "~/Views/Shared/_Layout1.cshtml";
+    ViewBag.Title = "Registrando um NOVO FABRICANTE";
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="~/App_Themes/Tema/usuariocreate.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Abel:ital,wght@1,200&display=swap" rel="stylesheet">
+    <title>MALFATTI</title>
+
+</head>
+<body>
+    <header>
+        <figure>
+            <img src="~/Imagens/logo.png" />
+        </figure>
+        <h1>Seja bem-vindo!</h1>
+    </header>
+    <main>
+        <div>
+            @using (Html.BeginForm("Create", "Usuario", FormMethod.Post))
+            {
+                <table>
+                    <tr>
+                        <td>@Html.TextBoxFor(u => u.Nome, new { placeholder = "Digite seu nome", @class = "form-input" })</td>
+                    </tr>
+                    
+                    <tr>
+                        <td>@Html.TextBoxFor(u => u.Username, new { placeholder = "Digite seu nome de usuário", @class = "form-input" })</td>
+                    </tr>
+
+                    <tr>
+                        <td>@Html.TextBoxFor(u => u.Telefone, new { placeholder = "Digite seu telefone", @class = "form-input" })</td>
+                    </tr>
+
+                    <tr>
+                        <td>@Html.TextBoxFor(u => u.Senha, new { placeholder = "Digite sua senha", @class = "form-input", type = "password" })</td>
+                    </tr>
+
+                    <tr>
+
+                        <td><input type="submit" value="Cadastrar" class="botaosubmit" /></td>
+                    </tr>
+
+                </table>
+
+            }
+        </div>
+        <p>Já tem uma conta?    <a href="#">Entrar</a></p>
+
+
+
+    </main>
+</body>
+</html>
