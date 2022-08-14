@@ -1,11 +1,8 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using Malfatti.Context;
+using Malfatti.Models;
 using System.Linq;
 using System.Net;
-using System.Web;
 using System.Web.Mvc;
-using Malfatti.Context;
-using Malfatti.Models;
 
 namespace Malfatti.Controllers
 {
@@ -18,7 +15,7 @@ namespace Malfatti.Controllers
         {
             return View(context.Produtos.OrderBy(c => c.Nome));
         }
-        
+
         // GET: Create
         public ActionResult Create()
         {
@@ -62,6 +59,36 @@ namespace Malfatti.Controllers
             context.SaveChanges();
             TempData["Message"] = "Produto " + produto.Nome.ToUpper() + " removido";
             return RedirectToAction("Index");
+        }
+
+        // GET: Produtos/Edit/5
+        [HttpGet]
+        public ActionResult Edit(long? id)
+        {
+            if (id == null)
+            {
+                return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
+            }
+            //Produto produto = produtos.Where(m => m.FabricanteId == id).First();
+
+            Produto produto = context.Produtos.Find(id);
+            if (produto == null)
+            {
+                return HttpNotFound();
+            }
+            return View(produto);
+        }
+
+        // POST: Fabricantes/Edit/5
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public ActionResult Edit(Produto produto)
+        {
+            if (ModelState.IsValid)
+            {
+                return RedirectToAction("Index");
+            }
+            return View(produto);
         }
     }
 }

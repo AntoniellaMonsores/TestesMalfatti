@@ -1,9 +1,5 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using Malfatti.Models;
 using System.Data.Entity;
-using System.Linq;
-using System.Web;
-using Malfatti.Models;
 
 namespace Malfatti.Context
 {
